@@ -30,7 +30,7 @@ function colorChange(){
 
 function changeMode(){
     let isDark = document.getElementById('mode').innerText=='Sötét mód';
-    console.log(isDark);
+    //console.log(isDark);
     if(isDark){
         document.getElementById('mode').innerHTML="Világos mód";
         document.body.className="dark-mode";
