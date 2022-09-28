@@ -19,7 +19,8 @@ function widthChange(){
 
 function borderWidth(){
     let border = document.getElementById('inputVastagsag').value;
-    document.getElementById('imgPlace').style.border = border+'px solid black';
+    let color = document.getElementById('inputColor').value;
+    document.getElementById('imgPlace').style.border = border+'px solid'+color;
 }
 
 function colorChange(){
@@ -27,11 +28,24 @@ function colorChange(){
     document.getElementById('imgPlace').style.borderColor = color;
 }
 
+function changeMode(){
+    let isDark = document.getElementById('mode').innerText=='Sötét mód';
+    console.log(isDark);
+    if(isDark){
+        document.getElementById('mode').innerHTML="Világos mód";
+        document.body.className="dark-mode";
+    }else{
+        document.body.className="light-mode";
+        document.getElementById('mode').innerHTML="Sötét mód";
+    }
+}
+
 function init(){
     document.getElementById('inputUrl').addEventListener('change',urlChange);
     document.getElementById('inputWidth').addEventListener('input',widthChange);
     document.getElementById('inputVastagsag').addEventListener('input',borderWidth);
     document.getElementById('inputColor').addEventListener('input',colorChange);
+    document.getElementById('mode').addEventListener('click',changeMode);
 }
 
 document.addEventListener('DOMContentLoaded',init);
