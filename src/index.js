@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './style.css';
 
+//let img = document.getElementById('imgPlace');
 
 function urlChange(){
     let url = document.getElementById('inputUrl').value;
@@ -16,9 +17,21 @@ function widthChange(){
     document.getElementById('imgPlace').style.width = size;
 }
 
+function borderWidth(){
+    let border = document.getElementById('inputVastagsag').value;
+    document.getElementById('imgPlace').style.border = border+'px solid black';
+}
+
+function colorChange(){
+    let color = document.getElementById('inputColor').value;
+    document.getElementById('imgPlace').style.borderColor = color;
+}
+
 function init(){
-    document.getElementById('inputUrl').addEventListener('input',urlChange);
+    document.getElementById('inputUrl').addEventListener('change',urlChange);
     document.getElementById('inputWidth').addEventListener('input',widthChange);
+    document.getElementById('inputVastagsag').addEventListener('input',borderWidth);
+    document.getElementById('inputColor').addEventListener('input',colorChange);
 }
 
 document.addEventListener('DOMContentLoaded',init);
